@@ -5,9 +5,9 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char font[] = "Inconsolata:pixelsize=19:lcdfilter=lcddefault:hintstyle=hintnone:rgba=rgb:antialias=true:autohint=false";
+static char font[] = "Fira Mono:pixelsize=14:lcdfilter=lcddefault:hintstyle=hintnone:rgba=rgb:antialias=true:autohint=false";
 static int borderpx = 0;
-static char shell[] = "/bin/zsh";
+static char shell[] = "/bin/bash";
 
 /* Kerning / character bounding-box mutlipliers */
 static float cwscale = 1.0;
@@ -35,7 +35,7 @@ static unsigned int actionfps = 30;
  * blinking timeout (set to 0 to disable blinking) for the terminal blinking
  * attribute.
  */
-static unsigned int blinktimeout = 800;
+static unsigned int blinktimeout = 0;
 
 /*
  * bell volume. It must be a value between -100 and 100. Use 0 for disabling
@@ -56,28 +56,28 @@ static const int alpha = 0xee;
  * Terminal colors (16 first used in escape sequence)
  */
 static const char *colorname[] = {
-    /* solarized dark */
-    "#073642",  /*   0: black    */
-    "#dc322f",  /*   1: red      */
-    "#859900",  /*   2: green    */
-    "#b58900",  /*   3: yellow   */
-    "#268bd2",  /*   4: blue     */
-    "#d33682",  /*   5: magenta  */
-    "#2aa198",  /*   6: cyan     */
-    "#eee8d5",  /*   7: white    */
-    "#002b36",  /*   8: brblack  */
-    "#cb4b16",  /*   9: brred    */
-    "#586e75",  /*  10: brgreen  */
-    "#657b83",  /*  11: bryellow */
-    "#839496",  /*  12: brblue   */
-    "#6c71c4",  /*  13: brmagenta*/
-    "#93a1a1",  /*  14: brcyan   */
-    "#fdf6e3",  /*  15: brwhite  */
+    /* apprentice */
+    "#1c1c1c",  /*   0: black    */
+    "#af5f5f",  /*   1: red      */
+    "#5f875f",  /*   2: green    */
+    "#87875f",  /*   3: yellow   */
+    "#5f87af",  /*   4: blue     */
+    "#5f5f87",  /*   5: magenta  */
+    "#5f8787",  /*   6: cyan     */
+    "#6c6c6c",  /*   7: white    */
+    "#444444",  /*   8: brblack  */
+    "#ff8700",  /*   9: brred    */
+    "#87af87",  /*  10: brgreen  */
+    "#ffffaf",  /*  11: bryellow */
+    "#8fafd7",  /*  12: brblue   */
+    "#8787af",  /*  13: brmagenta*/
+    "#5fafaf",  /*  14: brcyan   */
+    "#ffffff",  /*  15: brwhite  */
 
     [255] = 0,  /* other colors follow */
 
-    "#000000",  /* 256: background */
-    "#fbfbfb",  /* 257: foreground */
+    "#262626",  /* 256: background */
+    "#bcbcbc",  /* 257: foreground */
 };
 
 /**
@@ -86,7 +86,7 @@ static const char *colorname[] = {
  */
 static unsigned int defaultfg = 257;
 static unsigned int defaultbg = 256;
-static unsigned int defaultcs = 14;
+static unsigned int defaultcs = 257;
 
 /**
  * Colors used, when the specific fg == defaultfg. So in reverse mode this
